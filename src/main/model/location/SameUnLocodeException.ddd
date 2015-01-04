@@ -1,0 +1,20 @@
+context dddsample {
+
+	namespace location {
+		
+		import dddsample.location.*
+		
+		/**
+		 * At least two of the given UN location codes are identical.
+		 */
+		exception SameUnLocodeException cid 1003 {
+			
+			UnLocode code
+			
+			message "Two or more UN location codes are equal: ${code}"
+			
+		}
+	
+	}
+	
+}

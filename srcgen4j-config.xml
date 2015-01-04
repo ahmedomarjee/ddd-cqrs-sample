@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<srcgen4j-config xmlns="http://www.fuin.org/srcgen4j/commons" xmlns:xtext="http://www.fuin.org/srcgen4j/core/xtext" xmlns:emf="http://www.fuin.org/srcgen4j/core/emf">
+
+	<variables>
+		<variable name="basepkg" value="org.fuin" />
+		<variable name="copyrightHeader" value="/**\n * Copyright (C) 2015 Michael Schnell. All rights\n * reserved. &lt;http://www.fuin.org/&gt;\n *\n * This library is free software; you can redistribute it and/or modify it under\n * the terms of the GNU Lesser General Public License as published by the Free\n * Software Foundation; either version 3 of the License, or (at your option) any\n * later version.\n *\n * This library is distributed in the hope that it will be useful, but WITHOUT\n * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS\n * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more\n * details.\n *\n * You should have received a copy of the GNU Lesser General Public License\n * along with this library. If not, see &lt;http://www.gnu.org/licenses/&gt;.\n */\n" />
+	</variables>
+
+	<projects>
+		<project name="main" path="." maven="true">
+			<folder name="genMainJava" path="src-gen/main/java" create="true" override="true" clean="true" cleanExclude="\..*" />
+			<folder name="genMainRes" path="src-gen/main/resources" create="true" override="true" clean="true" cleanExclude="\..*" />
+			<folder name="genTestJava" path="src-gen/test/java" create="true" override="true" clean="true" cleanExclude="\..*" />
+			<folder name="genTestRes" path="src-gen/test/resources" create="true" override="true" clean="true" cleanExclude="\..*" />
+		</project>
+	</projects>
+
+	<parsers>
+		<parser name="dddParser" class="org.fuin.srcgen4j.core.xtext.XtextParser">
+			<config>
+				<xtext:xtext-parser-config modelPath="src/main/model" modelExt="ddd" setupClass="org.fuin.dsl.ddd.DomainDrivenDesignDslStandaloneSetup" />
+			</config>
+		</parser>
+	</parsers>
+
+	<generators>
+		<generator name="dddGenerator" class="org.fuin.srcgen4j.core.emf.EMFGenerator" parser="dddParser">
+			<config>
+				<emf:emf-generator-config>
+					<emf:artifact-factory artifact="ExternalTypes" class="org.fuin.dsl.ddd.gen.resourceset.CtxExternalTypes">
+						<variable name="namespace" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="AbstractAggregate" class="org.fuin.dsl.ddd.gen.aggregate.AbstractAggregateArtifactFactory">
+						<variable name="pkg" value="core" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="Aggregate" class="org.fuin.dsl.ddd.gen.aggregate.FinalAggregateArtifactFactory">
+						<variable name="pkg" value="core" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="ESRepository" class="org.fuin.dsl.ddd.gen.aggregate.ESRepositoryArtifactFactory">
+						<variable name="pkg" value="core" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="ESRepositoryFactory" class="org.fuin.dsl.ddd.gen.aggregate.ESRepositoryFactoryArtifactFactory">
+						<variable name="pkg" value="core" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="AggregateId" class="org.fuin.dsl.ddd.gen.aggregateid.AggregateIdArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="AggregateIdConverter" class="org.fuin.dsl.ddd.gen.aggregateid.AggregateIdConverterArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="CtxEntityIdFactoryArtifactFactory" class="org.fuin.dsl.ddd.gen.resourceset.CtxEntityIdFactoryArtifactFactory">
+						<variable name="pkg" value="common.basics" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="Exception" class="org.fuin.dsl.ddd.gen.except.ExceptionArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="ValidatorAnnotation" class="org.fuin.dsl.ddd.gen.constraint.ValidatorAnnotationArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="Validator" class="org.fuin.dsl.ddd.gen.constraint.ValidatorArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="AbstractEntity" class="org.fuin.dsl.ddd.gen.entity.AbstractEntityArtifactFactory">
+						<variable name="pkg" value="core" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="Entity"	class="org.fuin.dsl.ddd.gen.entity.FinalEntityArtifactFactory">
+						<variable name="pkg" value="core" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="EntityId" class="org.fuin.dsl.ddd.gen.entityid.EntityIdArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="EntityIdConverter" class="org.fuin.dsl.ddd.gen.entityid.EntityIdConverterArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="Enum" class="org.fuin.dsl.ddd.gen.enumobject.EnumArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="Event" class="org.fuin.dsl.ddd.gen.event.EventArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="EventTest" class="org.fuin.dsl.ddd.gen.event.EventTestArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="CtxEventRegistry" class="org.fuin.dsl.ddd.gen.resourceset.CtxEventRegistryArtifactFactory">
+						<variable name="pkg" value="common.basics" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="ValueObject" class="org.fuin.dsl.ddd.gen.valueobject.ValueObjectArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="ValueObjectConverter" class="org.fuin.dsl.ddd.gen.valueobject.ValueObjectConverterArtifactFactory">
+						<variable name="pkg" value="common" />
+					</emf:artifact-factory>
+					<emf:artifact-factory artifact="Service" class="org.fuin.dsl.ddd.gen.service.ServiceArtifactFactory">
+						<variable name="pkg" value="core" />
+					</emf:artifact-factory>
+				</emf:emf-generator-config>
+			</config>
+			<artifact name="AbstractAggregate" project="main" folder="genMainJava" />
+			<artifact name="Aggregate" project="main" folder="mainJava" />
+			<artifact name="ESRepository" project="main" folder="genMainJava" />
+			<artifact name="ESRepositoryFactory" project="main" folder="genMainJava" />
+			<artifact name="AggregateId" project="main" folder="mainJava" />
+			<artifact name="AggregateIdConverter" project="main" folder="mainJava" />
+			<artifact name="Exception" project="main" folder="mainJava" />
+			<artifact name="ValidatorAnnotation" project="main" folder="mainJava" />
+			<artifact name="Validator" project="main" folder="mainJava" />
+			<artifact name="AbstractEntity" project="main" folder="genMainJava" />
+			<artifact name="Entity" project="main" folder="mainJava" />
+			<artifact name="EntityId" project="main" folder="mainJava" />
+			<artifact name="EntityIdConverter" project="main" folder="mainJava" />
+			<artifact name="CtxEntityIdFactoryArtifactFactory" project="main"	folder="genMainJava" />
+			<artifact name="Enum" project="main" folder="mainJava" />
+			<artifact name="Event" project="main" folder="mainJava" />
+			<artifact name="EventTest" project="main" folder="testJava" />
+			<artifact name="CtxEventRegistry" project="main" folder="genMainJava" />
+			<artifact name="ValueObject" project="main" folder="mainJava" />
+			<artifact name="ValueObjectConverter" project="main" folder="mainJava" />
+			<artifact name="Service" project="main" folder="genMainJava" />			
+		</generator>
+	</generators>
+
+</srcgen4j-config>

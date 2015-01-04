@@ -1,0 +1,18 @@
+context dddsample {
+
+	namespace cargo {
+		
+		import dddsample.common.*
+		import dddsample.cargo.*
+	
+		/** An itinerary. */
+		value-object Itinerary {
+			
+			Leg* legs invariants CollectionNotEmpty, NoNullElements
+			
+		}
+	
+	
+	}
+
+}

@@ -1,0 +1,54 @@
+context dddsample {
+
+	namespace cargo {
+		
+		import dddsample.common.*
+		import dddsample.cargo.*
+		import dddsample.location.*
+	
+		/**
+		 * Route specification. Describes where a cargo orign and destination is,
+		 * and the arrival deadline.
+		 */
+		value-object RouteSpecification {
+		
+			/** Origin location. */
+			UnLocode origin {
+				slabel "ORIG"
+				label "Origin"
+				tooltip "Origin location (UN location code)"
+			}
+			
+			/** Destination location. */
+			UnLocode destination {
+				slabel "DEST"
+				label "Destination"
+				tooltip "Destination location (UN location code)"
+			}
+			
+		  	/** Arrival deadline. */
+			Timestamp arrivalDeadline {
+				slabel "AD"
+				label "Arrival deadline"
+			}
+		
+			/** Creates a new route specification. */
+			constructor create constraints OriginNotEqualDestinationConstraint {
+	
+				/** Destination location. */
+				UnLocode origin
+	
+				/** Destination location. */
+				UnLocode destination
+			  
+			  	/** Arrival deadline. */
+				Timestamp arrivalDeadline
+				
+			}
+			
+		}
+	
+	
+	}
+
+}

@@ -1,0 +1,20 @@
+context dddsample {
+
+	namespace location {
+		
+		import dddsample.location.*
+		
+		/**
+		 * The given UN location code already exists.
+		 */
+		exception DuplicateUnLocodeException cid 1001 {
+			
+			UnLocode code
+			
+			message "The given UN location code already exists: ${code}"
+			
+		}
+	
+	}
+	
+}

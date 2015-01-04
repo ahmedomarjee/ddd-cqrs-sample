@@ -1,0 +1,20 @@
+context dddsample {
+
+	namespace cargo {
+		
+		/** Represents the different transport statuses for a cargo. */
+		enum TransportStatus {
+			
+			instances {
+				NOT_RECEIVED
+				IN_PORT
+				ONBOARD_CARRIER 
+				CLAIMED
+				UNKNOWN
+			}
+			
+		}
+	
+	}
+
+}

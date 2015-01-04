@@ -1,0 +1,46 @@
+context dddsample {
+
+	namespace voyage {
+		
+		import dddsample.common.*
+		import dddsample.location.*
+		import dddsample.voyage.*
+		
+		/**
+		 * A carrier movement is a vessel voyage from one location to another.
+		 */
+		value-object CarrierMovement {
+			
+			/** Location of departure. */
+			UnLocode departureLocation {
+				slabel "DEP"
+				label "Departure"
+				tooltip "Place of departure (UN location code)"
+			}
+			
+			/** Location of arrival. */
+			UnLocode arrivalLocation {
+				slabel "ARR"
+				label "Arrival"
+				tooltip "Place of arrival (UN location code)"
+			}
+			
+			/** Time of departure. */
+			Timestamp departureTime {
+				slabel "DT"
+				label "Departure time"
+				tooltip "Date and time of departure"
+			}
+			
+			/** Time of arrival. */
+			Timestamp arrivalTime {
+				slabel "AT"
+				label "Arrival time"
+				tooltip "Date and time of arrival"
+			}
+			
+		}
+
+	}
+	
+}

@@ -1,0 +1,27 @@
+context dddsample {
+
+	namespace cargo {
+
+		import dddsample.cargo.*
+		import dddsample.common.*
+		import dddsample.location.*
+		import dddsample.voyage.*
+		
+		/** An itinerary consists of one or more legs. */
+		value-object Leg {
+		
+			VoyageNumber voyage
+			
+			UnLocode loadLocation
+			
+			UnLocode unloadLocation
+			
+			Timestamp loadTime
+			
+			Timestamp unloadTime
+		
+		}
+		
+	}
+
+}

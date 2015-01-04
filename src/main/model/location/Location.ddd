@@ -1,0 +1,63 @@
+context dddsample {
+
+	namespace location {
+		
+		import dddsample.common.*
+		import dddsample.location.*
+		
+		/**
+		 * A location in our model is a stop on a journey, such as cargo
+		 * origin or destination, or carrier movement endpoints.
+ 		 */
+		aggregate Location identifier UnLocode {
+			
+			LocationName name
+			
+			/** Creates a new location. */
+			constructor create constraints UniqueUnLocodeConstraint 
+			                   fires LocationCreatedEvent {
+				
+				UnLocode code
+				
+				LocationName name
+				
+				LocationConstructorService srv 
+				
+				/**
+				 * Location constructor service.
+				 */
+				service LocationConstructorService {
+		
+					/** 
+					 * Verifies if the given UN location code exists.
+					 */
+					method unLocodeExists {
+						
+						/** UN location code to verify. */
+						UnLocode code
+						
+						/** TRUE if the given code already exists else FALSE. */
+						returns Boolean
+						
+					}
+					
+				}
+				
+				/** A new location was created. */
+				event LocationCreatedEvent {
+					
+					UnLocode code
+					
+					LocationName name
+					
+					message "Created location '${name}' [${code}]"
+					
+				}
+				
+			}
+			
+		}
+	
+	}
+	
+}

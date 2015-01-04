@@ -1,0 +1,30 @@
+context dddsample {
+
+	namespace location {
+		
+		import dddsample.common.*
+		import dddsample.location.*
+		
+		/**
+		 * Verifies that the two given UN location codes are not equal.
+		 */
+		constraint OriginNotEqualDestinationConstraint on OriginNotEqualDestinationWrapper 
+		                                               exception SameUnLocodeException {
+
+			message "The UN location codes cannot be equal: ${vv_origin}"
+			
+		}
+		
+		/** Argument for the equally named constraint. */
+		value-object OriginNotEqualDestinationWrapper {
+			
+			UnLocode origin
+			
+			UnLocode destination
+			
+		}
+		
+		
+	}
+
+}

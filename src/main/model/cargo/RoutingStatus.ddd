@@ -1,0 +1,18 @@
+context dddsample {
+
+	namespace cargo {
+		
+		/** Routing status. */
+		enum RoutingStatus {
+			
+			instances {
+				NOT_ROUTED
+				ROUTED
+				MISROUTED
+			}
+			
+		}
+	
+	}
+
+}

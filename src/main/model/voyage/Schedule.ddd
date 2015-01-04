@@ -1,0 +1,18 @@
+context dddsample {
+
+	namespace voyage {
+		
+		import dddsample.common.*
+		import dddsample.voyage.*
+		
+		/** A voyage schedule. */
+		value-object Schedule {
+			
+			/** List of movements. */
+			CarrierMovement* carrierMovements invariants NoNullElements, CollectionNotEmpty
+			
+		}
+		
+	}
+
+}

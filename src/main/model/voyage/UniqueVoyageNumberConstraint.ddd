@@ -1,0 +1,18 @@
+context dddsample {
+
+	namespace voyage {
+		
+		import dddsample.voyage.*
+		
+		/**
+		 * Verifies that the given voyage number is unique.
+		 */
+		constraint UniqueVoyageNumberConstraint on VoyageNumber exception DuplicateVoyageNumberException {
+
+			message "The given voyage number already exists: ${vv}"
+			
+		}
+	
+	}
+
+}

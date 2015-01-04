@@ -1,0 +1,20 @@
+context dddsample {
+
+	namespace voyage {
+		
+		import dddsample.voyage.*
+		
+		/**
+		 * The given voyage number already exists.
+		 */
+		exception DuplicateVoyageNumberException cid 1002 {
+			
+			VoyageNumber number
+			
+			message "The given voyage number already exists: ${number}"
+			
+		}
+	
+	}
+
+}

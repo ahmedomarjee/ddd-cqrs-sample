@@ -1,0 +1,57 @@
+context dddsample {
+
+	namespace voyage {
+		
+		import dddsample.common.*
+		import dddsample.voyage.*
+		
+		/** A Voyage. */
+		aggregate Voyage identifier VoyageNumber {
+			
+			Schedule schedule
+			
+			/** Creates a new voyage. */
+			constructor create constraints UniqueVoyageNumberConstraint 
+			                   fires VoyageCreatedEvent {
+
+				VoyageNumber voyageNumber
+				
+				Schedule schedule
+				
+				VoyageConstructorService srv 
+				
+				/**
+				 * Voyage constructor service.
+				 */
+				service VoyageConstructorService {
+		
+					/** 
+					 * Verifies if the given voyage number exists.
+					 */
+					method unLocodeExists {
+						
+						VoyageNumber voyageNumber
+						
+						/** TRUE if the number already exists else FALSE. */
+						returns Boolean
+						
+					}
+					
+				}
+				
+				/** A new voyage was created. */
+				event VoyageCreatedEvent {
+					
+					VoyageNumber voyageNumber
+					
+					message "Created voyage ${voyageNumber}"
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+
+}

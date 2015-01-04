@@ -1,0 +1,19 @@
+context dddsample {
+
+	namespace location {
+		
+		import dddsample.common.*
+		import dddsample.location.*
+		
+		/**
+		 * Verifies that the given UN location code is unique within all known codes.
+		 */
+		constraint UniqueUnLocodeConstraint on UnLocode exception DuplicateUnLocodeException {
+
+			message "The given UN location code already exists: ${vv}"
+			
+		}
+		
+	}
+
+}

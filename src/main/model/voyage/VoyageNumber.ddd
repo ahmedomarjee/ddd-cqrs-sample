@@ -1,0 +1,22 @@
+context dddsample {
+
+	namespace voyage {
+		
+		import dddsample.common.*
+		import dddsample.voyage.*
+		
+		/** Identifies a voyage. */
+		aggregate-id VoyageNumber identifies Voyage base String {
+			
+			slabel "VNo"
+			label "Voyage number"
+			tooltip "Unique number of a voyage"
+			
+			/** Persistent value. */
+			String number 
+			
+		}
+		
+	}
+
+}
