@@ -270,7 +270,7 @@
 				<executions>
 					<execution>
 						<id>srcgen4j</id>
-						<phase>none</phase>
+						<phase>generate-sources</phase>
 						<goals>
 							<goal>process-template</goal>
 						</goals>
