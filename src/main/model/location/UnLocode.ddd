@@ -16,7 +16,7 @@ context dddsample {
 			examples "USMNH" "DEHAM"
 			
 			/** Persistent value. */
-			String code invariants Pattern("[a-zA-Z]{2}[a-zA-Z2-9]{3}") 
+			String code invariants Pattern("[A-Z]{2}[A-Z2-9]{3}") 
 			
 		}
 		
