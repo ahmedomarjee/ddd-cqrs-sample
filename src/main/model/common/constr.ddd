@@ -4,6 +4,13 @@ context dddsample {
 	
 		import dddsample.common.*
 	
+		/** Makes sure a string is not empty. */
+		constraint NotEmpty on String {
+			
+			message "The value cannot be empty"
+			
+		}
+
 		/**
 		 * Makes sure a string has exactly a given size.
 	 	 */
