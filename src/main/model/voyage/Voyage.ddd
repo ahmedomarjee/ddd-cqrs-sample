@@ -28,7 +28,7 @@ context dddsample {
 					/** 
 					 * Verifies if the given voyage number exists.
 					 */
-					method unLocodeExists {
+					method voyageNumberExists {
 						
 						VoyageNumber voyageNumber
 						
