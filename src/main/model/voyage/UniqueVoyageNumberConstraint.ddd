@@ -7,9 +7,9 @@ context dddsample {
 		/**
 		 * Verifies that the given voyage number is unique.
 		 */
-		constraint UniqueVoyageNumberConstraint on VoyageNumber exception DuplicateVoyageNumberException {
+		constraint UniqueVoyageNumberConstraint input VoyageNumber exception DuplicateVoyageNumberException {
 
-			message "The given voyage number already exists: ${vv}"
+			message "The given voyage number already exists: ${input}"
 			
 		}
 	

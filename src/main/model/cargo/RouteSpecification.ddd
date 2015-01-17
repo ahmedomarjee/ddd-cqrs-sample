@@ -33,7 +33,7 @@ context dddsample {
 			}
 		
 			/** Creates a new route specification. */
-			constructor create constraints OriginNotEqualDestinationConstraint {
+			constructor create preconditions OriginNotEqualDestinationConstraint {
 	
 				/** Destination location. */
 				UnLocode origin

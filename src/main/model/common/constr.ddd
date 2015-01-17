@@ -5,7 +5,7 @@ context dddsample {
 		import dddsample.common.*
 	
 		/** Makes sure a string is not empty. */
-		constraint NotEmpty on String {
+		constraint NotEmpty input String {
 			
 			message "The value cannot be empty"
 			
@@ -14,19 +14,19 @@ context dddsample {
 		/**
 		 * Makes sure a string has exactly a given size.
 	 	 */
-		constraint ExactLength on String {
+		constraint ExactLength input String {
 	
 			/** Expected length. */
 			Integer expected
 	        
-	        message "Expected an exact length of ${expected}, but value was: '${vv}'"
+	        message "Expected an exact length of ${expected}, but value was: '${input}'"
 	        
 		}
 
 		/**
 		 * Makes sure a string has a defined length (min/max).
 		 */
-		constraint Length on String {
+		constraint Length input String {
 			
 			/** Expected minimum length (inclusive). */
 			Integer min
@@ -34,19 +34,19 @@ context dddsample {
 			/** Expected maximum length (inclusive). */
 			Integer max
 	
-	        message "Expected a length between ${min} and ${max} characters, but value was: '${vv}'"
+	        message "Expected a length between ${min} and ${max} characters, but value was: '${input}'"
 	
 		}
 	
 		/**
 		 * Makes sure a string has at a maximum length.
 	 	 */
-		constraint MaxLength on String {
+		constraint MaxLength input String {
 	
 			/** Expected maximum length (inclusive). */
 			Integer expected
 	
-			message "Expected a maximum length of ${expected} characters, but value was: '${vv}'"
+			message "Expected a maximum length of ${expected} characters, but value was: '${input}'"
 		
 		}
 
@@ -54,43 +54,43 @@ context dddsample {
 		/**
 		 * Makes sure a numeric is not greater than a given value.
 	 	 */
-		constraint MaxValue on Long {
+		constraint MaxValue input Long {
 	
 			/** Expected maximum value (inclusive). */
 			Long expected
 	
-			message "Expected a maximum value of ${expected}, but actual was: ${vv}"
+			message "Expected a maximum value of ${expected}, but actual was: ${input}"
 			
 		}
 	
 		/**
 		 * Makes sure a string has at least a given length.
 		 */
-		constraint MinLength on String {
+		constraint MinLength input String {
 		
 			/** Expected minimum length (inclusive). */
 			Integer expected
 						
-			message "Expected a minimum length of ${expected} characters, but value was: ${vv}"
+			message "Expected a minimum length of ${expected} characters, but value was: ${input}"
 			
 		}
 
 		/**
 		 * Makes sure a numeric is not less than a given value.
 		 */
-		constraint MinValue on Long {
+		constraint MinValue input Long {
 	
 			/** Expected minimum value (inclusive). */
 			Long expected
 			
-			message "Expected a minimum value of ${expected}, but actual was: ${vv}"
+			message "Expected a minimum value of ${expected}, but actual was: ${input}"
 			
 		}
 
 		/**
 		 * Makes sure a numeric is not less than or greater than a given value.
 		 */
-		constraint ValueRange on Long {
+		constraint ValueRange input Long {
 			
 			/** Expected minimum value (inclusive). */
 			Long min
@@ -98,31 +98,31 @@ context dddsample {
 			/** Expected maximum value (inclusive). */
 			Long max
 			
-			message "Expected a value between ${min} and ${max}, but actual was: ${vv}"
+			message "Expected a value between ${min} and ${max}, but actual was: ${input}"
 			
 		}
 	
 		/**
 		 * Makes sure a string matches a given pattern.
 		 */	
-		constraint Pattern on String {
+		constraint Pattern input String {
 			
 			/** Expected pattern. */
 			String pattern
 			
-			message "The value does not match the pattern '${pattern}': ${vv}"
+			message "The value does not match the pattern '${pattern}': ${input}"
 			
 		}
 		
 		/** Makes sure a collection contains no null elements. */
-		constraint NoNullElements on Collection {
+		constraint NoNullElements input Collection {
 			
-			message "The collection cannot contain null elements: ${vv}"
+			message "The collection cannot contain null elements: ${input}"
 			
 		}
 		
 		/** Makes sure a collection is not empty. */
-		constraint CollectionNotEmpty on Collection {
+		constraint CollectionNotEmpty input Collection {
 			
 			message "The collection cannot be empty"
 			

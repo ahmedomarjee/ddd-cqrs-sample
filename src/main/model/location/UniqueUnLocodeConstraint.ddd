@@ -8,9 +8,9 @@ context dddsample {
 		/**
 		 * Verifies that the given UN location code is unique within all known codes.
 		 */
-		constraint UniqueUnLocodeConstraint on UnLocode exception DuplicateUnLocodeException {
+		constraint UniqueUnLocodeConstraint input UnLocode exception DuplicateUnLocodeException {
 
-			message "The given UN location code already exists: ${vv}"
+			message "The given UN location code already exists: ${input}"
 			
 		}
 		

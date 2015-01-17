@@ -8,10 +8,10 @@ context dddsample {
 		/**
 		 * Verifies that the two given UN location codes are not equal.
 		 */
-		constraint OriginNotEqualDestinationConstraint on OriginNotEqualDestinationWrapper 
+		constraint OriginNotEqualDestinationConstraint input OriginNotEqualDestinationWrapper 
 		                                               exception SameUnLocodeException {
 
-			message "The UN location codes cannot be equal: ${vv_origin}"
+			message "The UN location codes cannot be equal: ${input.origin}"
 			
 		}
 		

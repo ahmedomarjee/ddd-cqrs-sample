@@ -14,7 +14,7 @@ context dddsample {
 			LocationName name
 			
 			/** Creates a new location. */
-			constructor create constraints UniqueUnLocodeConstraint 
+			constructor create business-rules UniqueUnLocodeConstraint 
 			                   fires LocationCreatedEvent {
 				
 				UnLocode code
