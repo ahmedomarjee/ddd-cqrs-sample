@@ -7,8 +7,17 @@ context dddsample {
 		import dddsample.location.*
 		import dddsample.voyage.*
 		
+		/**
+		 * Verifies that the load time is before the unload time.
+		 */
+		constraint LoadTimeBeforeUnloadTimeConstraint input Leg {
+
+			message "The load time (${input.loadTime}) cannot be greater or equal the unload time (${input.unloadTime})"
+			
+		}
+		
 		/** An itinerary consists of one or more legs. */
-		value-object Leg {
+		value-object Leg invariants LoadTimeBeforeUnloadTimeConstraint {
 		
 			VoyageNumber voyage
 			
@@ -21,6 +30,8 @@ context dddsample {
 			Timestamp unloadTime
 		
 		}
+		
+		
 		
 	}
 
