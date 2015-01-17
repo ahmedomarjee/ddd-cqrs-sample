@@ -11,10 +11,9 @@ context dddsample {
 			Schedule schedule
 			
 			/** Creates a new voyage. */
-			constructor create business-rules UniqueVoyageNumberConstraint 
-			                   fires VoyageCreatedEvent {
+			constructor create fires VoyageCreatedEvent {
 
-				VoyageNumber voyageNumber
+				VoyageNumber voyageNumber business-rules UniqueVoyageNumberConstraint 
 				
 				Schedule schedule
 				
