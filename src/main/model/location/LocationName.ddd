@@ -16,7 +16,7 @@ context dddsample {
 			examples "Manhattan/New York" "Hamburg"
 			
 			/** Persistent value. */
-			String name invariants Length(1, 100) 
+			String name invariants Length(1, 100)
 			
 		}
 		
