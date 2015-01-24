@@ -10,10 +10,20 @@ context dddsample {
 		 */
 		constraint UniqueUnLocodeConstraint input UnLocode exception DuplicateUnLocodeException {
 
+			/** 
+			 * The frequency of UN location code changes is very low (few per year) and 
+			 * will most likely be applied to the system by the same user. 
+			 */
+			consistency weak {
+				acceptable 1 seconds
+				detection manually
+				resolution manually
+			}
+
 			message "The given UN location code already exists: ${input}"
 			
 		}
-
+		
 	}
 
 }

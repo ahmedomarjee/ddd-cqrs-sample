@@ -9,6 +9,12 @@ context dddsample {
 		 */
 		constraint UniqueVoyageNumberConstraint input VoyageNumber exception DuplicateVoyageNumberException {
 
+			/** 
+			 * The frequency of adding new voyages is low and therefore a 
+			 * fully constistent numbering process is preferred.
+			 */
+			consistency strong
+
 			message "The given voyage number already exists: ${input}"
 			
 		}
