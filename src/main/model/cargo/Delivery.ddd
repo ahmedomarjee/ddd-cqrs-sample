@@ -1,0 +1,33 @@
+context dddsample {
+
+	namespace cargo {
+		
+		import dddsample.common.*
+		import dddsample.cargo.*
+		import dddsample.location.*
+		import dddsample.voyage.*
+		import dddsample.handling.*
+		
+		
+		/**
+		 * The actual transportation of the cargo, as opposed to the customer 
+		 * requirement (RouteSpecification) and the plan (Itinerary). 
+		 */
+		value-object Delivery {
+			
+		   TransportStatus transportStatus
+		   UnLocode lastKnownLocation
+		   VoyageNumber currentVoyage
+		   Boolean misdirected
+		   Date eta
+		   HandlingActivity nextExpectedActivity
+		   Boolean isUnloadedAtDestination
+		   RoutingStatus routingStatus
+		   Date calculatedAt
+		   // HandlingEvent lastEvent
+			
+		}
+		
+	}
+
+}

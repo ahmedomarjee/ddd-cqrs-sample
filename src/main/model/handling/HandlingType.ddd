@@ -1,0 +1,26 @@
+context dddsample {
+
+	namespace handling {
+
+		import dddsample.common.*
+	
+		/** Routing status. */
+		enum HandlingType {
+			
+			/** Whether or not a voyage is associated with the handling type. */
+			Boolean voyageRequired
+			
+			instances {
+			    LOAD(true)
+			    UNLOAD(true)
+			    RECEIVE(false)
+			    CLAIM(false)
+			    CUSTOMS(false)
+			}
+			
+		}
+	
+	
+	}
+	
+}

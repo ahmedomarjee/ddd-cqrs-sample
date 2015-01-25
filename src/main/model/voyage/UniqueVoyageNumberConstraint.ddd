@@ -11,9 +11,13 @@ context dddsample {
 
 			/** 
 			 * The frequency of adding new voyages is low and therefore a 
-			 * fully constistent numbering process is preferred.
+			 * duplicate is very unlikely.
 			 */
-			consistency strong
+			consistency weak {
+				acceptable 1 seconds
+				detection never
+				resolution never
+			}
 
 			message "The given voyage number already exists: ${input}"
 			

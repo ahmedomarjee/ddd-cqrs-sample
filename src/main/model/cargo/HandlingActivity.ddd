@@ -1,0 +1,26 @@
+context dddsample {
+
+	namespace cargo {
+		
+		import dddsample.common.*
+		import dddsample.cargo.*
+		import dddsample.location.*
+		import dddsample.voyage.*
+		import dddsample.handling.*
+		
+		/**
+		 * A handling activity represents how and where a cargo can be handled,
+		 * and can be used to express predictions about what is expected to
+		 * happen to a cargo in the future.
+		 */
+		value-object HandlingActivity {
+			
+			HandlingType handlingType
+			UnLocode location
+			VoyageNumber voyage
+			
+		}
+		
+	}
+
+}
