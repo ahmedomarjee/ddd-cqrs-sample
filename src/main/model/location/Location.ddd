@@ -40,16 +40,6 @@ context dddsample {
 						
 					}
 					
-					/** 
-					 * Adds the given UN location code to a unique set if it does not exist.
-					 */
-					method addIfNotExists business-rules UniqueUnLocodeConstraint {
-						
-						/** UN location code to add. */
-						UnLocode code
-						
-					}
-					
 				}
 				
 				/** A new location was created. */
