@@ -13,13 +13,6 @@ context dddsample {
 			
 		}
 		
-		value-object CarrierMovementList {
-			
-			CarrierMovement* values
-			
-		}
-		
-		
 	}
 
 }

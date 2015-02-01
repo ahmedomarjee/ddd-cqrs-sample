@@ -6,19 +6,6 @@ context dddsample {
 		import dddsample.voyage.*
 		
 		
-		aggregate-id AggregateXId identifies AggregateX {
-		}
-
-		aggregate AggregateX identifier AggregateXId {
-		}
-		
-		entity-id EntityAId identifies EntityA {
-		}
-		
-		entity EntityA identifier EntityAId root AggregateX {
-		}
-		
-		
 		/** A Voyage. */
 		aggregate Voyage identifier VoyageNumber {
 			
