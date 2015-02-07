@@ -2,7 +2,7 @@ context dddsample {
 
 	namespace location {
 		
-		import dddsample.location.*
+		import dddsample.location.Location.UnLocode
 		
 		/**
 		 * The given UN location code already exists.

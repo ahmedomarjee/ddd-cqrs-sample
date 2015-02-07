@@ -18,9 +18,9 @@ context dddsample {
 		/** Argument for the equally named constraint. */
 		value-object OriginNotEqualDestinationWrapper {
 			
-			UnLocode origin
+			Location.UnLocode origin
 			
-			UnLocode destination
+			Location.UnLocode destination
 			
 		}
 		

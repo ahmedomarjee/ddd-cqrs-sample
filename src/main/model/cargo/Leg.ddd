@@ -4,8 +4,8 @@ context dddsample {
 
 		import dddsample.cargo.*
 		import dddsample.common.*
-		import dddsample.location.*
-		import dddsample.voyage.*
+		import dddsample.location.Location.UnLocode
+		import dddsample.voyage.Voyage.VoyageNumber
 		
 		/**
 		 * Verifies that the load time is before the unload time.

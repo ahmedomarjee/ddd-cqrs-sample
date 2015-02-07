@@ -6,7 +6,19 @@ context dddsample {
 		import dddsample.cargo.*
 		import dddsample.location.*
 	
-		aggregate Cargo identifier TrackingId {
+		aggregate Cargo {
+			
+			/** Uniquely identifies a particular cargo. */
+			aggregate-id TrackingId base String {
+				
+				slabel "TID"
+				label "Tracking ID"
+				tooltip "Unique cargo identifier"
+				
+				/** Persistent value. */
+				String number 
+				
+			}
 			
 		}
 	

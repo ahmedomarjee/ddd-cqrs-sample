@@ -3,7 +3,8 @@ context dddsample {
 	namespace location {
 		
 		import dddsample.common.*
-		import dddsample.location.*
+		import dddsample.location.Location.UnLocode
+		import dddsample.location.DuplicateUnLocodeException
 		
 		/**
 		 * Verifies that the given UN location code is unique within all known codes.

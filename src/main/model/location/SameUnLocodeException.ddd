@@ -9,7 +9,7 @@ context dddsample {
 		 */
 		exception SameUnLocodeException cid 1003 {
 			
-			UnLocode code
+			Location.UnLocode code
 			
 			message "Two or more UN location codes are equal: ${code}"
 			

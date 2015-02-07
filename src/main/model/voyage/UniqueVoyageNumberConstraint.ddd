@@ -7,7 +7,7 @@ context dddsample {
 		/**
 		 * Verifies that the given voyage number is unique.
 		 */
-		constraint UniqueVoyageNumberConstraint input VoyageNumber exception DuplicateVoyageNumberException {
+		constraint UniqueVoyageNumberConstraint input Voyage.VoyageNumber exception DuplicateVoyageNumberException {
 
 			/** 
 			 * The frequency of adding new voyages is low and therefore a 

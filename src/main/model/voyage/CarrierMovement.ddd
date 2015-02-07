@@ -3,7 +3,7 @@ context dddsample {
 	namespace voyage {
 		
 		import dddsample.common.*
-		import dddsample.location.*
+		import dddsample.location.Location.UnLocode
 		import dddsample.voyage.*
 		
 		/**

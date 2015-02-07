@@ -9,7 +9,7 @@ context dddsample {
 		 */
 		exception DuplicateVoyageNumberException cid 1002 {
 			
-			VoyageNumber number
+			Voyage.VoyageNumber number
 			
 			message "The given voyage number already exists: ${number}"
 			
