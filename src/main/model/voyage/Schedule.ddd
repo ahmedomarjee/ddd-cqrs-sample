@@ -9,7 +9,7 @@ context dddsample {
 		value-object Schedule {
 			
 			/** List of movements. */
-			CarrierMovement* carrierMovements invariants NoNullElements, CollectionNotEmpty
+			List<CarrierMovement> carrierMovements invariants ListNotEmpty, NoNullElements
 			
 		}
 		

@@ -115,16 +115,16 @@ context dddsample {
 		}
 		
 		/** Makes sure a collection contains no null elements. */
-		constraint NoNullElements input Collection {
+		constraint NoNullElements input List {
 			
-			message "The collection cannot contain null elements: ${input}"
+			message "The list cannot contain null elements: ${input}"
 			
 		}
 		
 		/** Makes sure a collection is not empty. */
-		constraint CollectionNotEmpty input Collection {
+		constraint ListNotEmpty input List {
 			
-			message "The collection cannot be empty"
+			message "The list cannot be empty"
 			
 		}
 		

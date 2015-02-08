@@ -3,7 +3,6 @@ context dddsample {
 	namespace location {
 		
 		import dddsample.common.*
-		import dddsample.location.LocationName
 		import dddsample.location.UniqueUnLocodeConstraint
 		
 		/**
@@ -68,6 +67,21 @@ context dddsample {
 				
 				/** Persistent value. */
 				String code invariants Pattern("[A-Z]{2}[A-Z2-9]{3}") 
+				
+			}
+			
+			/**
+			 * Name of a location.
+			 */
+			value-object LocationName base String {
+	
+				slabel "Name"
+				label "Location name"
+				tooltip "Unique name of the location"
+				examples "Manhattan/New York" "Hamburg"
+				
+				/** Persistent value. */
+				String name invariants Length(1, 100)
 				
 			}
 			

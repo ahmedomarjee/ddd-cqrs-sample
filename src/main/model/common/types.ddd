@@ -53,11 +53,14 @@ context dddsample {
 		/** Any type. See "java.lang.Object". */    
 		type Object
 		
-		/** A group of objects. See <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">java.util.Collection</a>. */    
-		type Collection
-		
 		/** An ordered list of entity identifiers. An aggregate root will be the first entry if it's contained in the list. See <a href="https://github.com/fuinorg/ddd-4-java/blob/master/src/main/java/org/fuin/ddd4j/ddd/EntityIdPath.java">org.fuin.ddd4j.ddd.EntityIdPath</a>. */
 		type EntityIdPath
+
+		/** A group of objects. See <a href="http://docs.oracle.com/javase/8/docs/api/java/util/Collection.html">java.util.Collection</a>. */    
+		type Collection generics 1
+		
+		/** An ordered collection (also known as sequence). See <a href="http://docs.oracle.com/javase/8/docs/api/java/util/List.htmll">java.util.List</a>. */    
+		type List generics 1
 
      }
 

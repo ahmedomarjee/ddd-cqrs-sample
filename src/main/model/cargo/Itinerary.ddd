@@ -8,7 +8,7 @@ context dddsample {
 		/** An itinerary. */
 		value-object Itinerary {
 			
-			Leg* legs invariants CollectionNotEmpty, NoNullElements
+			List<Leg> legs invariants ListNotEmpty, NoNullElements
 			
 		}
 	
