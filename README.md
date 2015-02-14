@@ -11,6 +11,7 @@ To enable syntax highlighting for the "*.ddd" model files you need to install th
 - [SrcGen4J configuration](https://github.com/fuinorg/ddd-cqrs-sample/blob/master/srcgen4j-config.xml)
 
 *History*
+- [2015-02-14] DDD DSL refactored - Next step will be to continue with first CRQS parts (*.cqrs files) 
 - [2015-01-11] Model creation in progress (*.ddd files)
 - [2015-01-04] Project started
 
